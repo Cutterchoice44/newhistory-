@@ -10,7 +10,7 @@
   <title>Our Story – Cutters Choice Radio</title>
 
   <!-- Main CSS (v bump for cache bust) -->
-  <link rel="stylesheet" href="style.css?v=7">
+  <link rel="stylesheet" href="style.css?v=8">
   <!-- Bebas Neue & FontAwesome -->
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
   <link rel="stylesheet"
@@ -32,7 +32,7 @@
     /* Story panels wrapper */
     .story-content {
       width: 90%;
-      margin: 4rem auto;
+      margin: 4rem auto; /* top & bottom spacing */
       background: #000;
       clear: both;
     }
@@ -45,26 +45,27 @@
     }
     .history-image img {
       display: block;
-      width: 50%;    /* reduce images to 50% width */
+      width: 50%;
       height: auto;
       margin: 0 auto;
       border: none;
     }
 
-    /* Embed the video above the bottom banner */
+    /* Embed video below the last panel instead of overlay */
     .history-image.history-last .video-overlay {
-      position: absolute;
-      bottom: 60px;            /* sits 60px above panel bottom */
-      left: 50%;
-      transform: translateX(-50%);
-      width: 50%;              /* match panel width */
+      position: relative;
+      bottom: auto;
+      left: auto;
+      transform: none;
+      width: 50%;       /* match panel width */
       max-width: 500px;
+      margin: 2rem auto; /* place it below the image */
       z-index: 5;
     }
     .history-image.history-last .video-overlay .inner {
       position: relative;
       width: 100%;
-      padding-bottom: 56.25%;    /* 16:9 */
+      padding-bottom: 56.25%; /* 16:9 aspect */
     }
     .history-image.history-last .video-overlay iframe {
       position: absolute;
@@ -77,9 +78,14 @@
     .back-home {
       display: inline-block;
       font-size: 1.6rem;
-      margin-bottom: 3rem;
+      margin: 2rem auto 3rem;
       color: var(--brand-teal);
       text-decoration: none;
+    }
+
+    /* Ensure footer sits below the content */
+    footer.banner {
+      margin-top: 3rem;
     }
   </style>
 </head>
