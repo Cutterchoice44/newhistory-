@@ -9,22 +9,22 @@
   <meta name="viewport"           content="width=device-width, initial-scale=1.0">
   <title>Our Story – Cutters Choice Radio</title>
 
-  <!-- Main CSS (bump the v to bust caches) -->
-  <link rel="stylesheet" href="style.css?v=4">
+  <!-- Main CSS (v bump for cache bust) -->
+  <link rel="stylesheet" href="style.css?v=5">
   <!-- Bebas Neue & FontAwesome -->
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
   <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-  <!-- Page‐specific overrides -->
+  <!-- Page overrides -->
   <style>
     :root { --brand-teal: #5A8785; }
 
-    /* keep header/nav in front */
+    /* Ensure header/nav stay above content */
     header.header-banner { position: relative; z-index: 20; }
     nav#main-nav        { position: relative; z-index: 20; }
 
-    /* panel wrapper fills more of the screen */
+    /* Story panels wrapper */
     .story-content {
       width: 90%;
       margin: 4rem auto;
@@ -32,6 +32,7 @@
       clear: both;
     }
 
+    /* Panel container */
     .history-image {
       position: relative;
       margin-bottom: 2rem;
@@ -39,26 +40,24 @@
     }
     .history-image img {
       display: block;
-      width: 50%;       /* reduced by 50% */
+      width: 50%;    /* reduce images to 50% width */
       height: auto;
       margin: 0 auto;
       border: none;
     }
 
-    /* position the video just under the bottom of panel 3 */
+    /* Embed the video just below the third panel */
     .history-image.history-last .video-overlay {
       position: absolute;
-      bottom: -100px;    /* move up so it sits just below the panel */
+      top: calc(100% + 20px);  /* sit just below the panel */
       left: 50%;
       transform: translateX(-50%);
-      width: 80%;
-      max-width: 1000px;
-      z-index: 5;
+      width: 50%;               /* match panel width */
     }
     .history-image.history-last .video-overlay .inner {
       position: relative;
       width: 100%;
-      padding-bottom: 56.25%; /* 16:9 */
+      padding-bottom: 56.25%;    /* 16:9 aspect */
     }
     .history-image.history-last .video-overlay iframe {
       position: absolute;
@@ -67,6 +66,7 @@
       border: none;
     }
 
+    /* Back link style */
     .back-home {
       display: inline-block;
       font-size: 1.6rem;
@@ -83,64 +83,45 @@
     <div class="header-gif-right"></div>
     <div class="header-gif-left"></div>
     <div class="logo-container">
-      <img class="logo" src="images/logo.png" alt="Cutters Choice Radio Logo" loading="lazy">
+      <img class="logo" src="images/logo.png" alt="Logo" loading="lazy">
     </div>
     <div class="title">
       <h1>Cutters Choice Radio</h1>
       <p class="tagline">The home of relentless flavas and significant bangers!</p>
     </div>
     <div class="logo-container">
-      <img class="logo" src="images/logo.png" alt="Cutters Choice Radio Logo" loading="lazy">
+      <img class="logo" src="images/logo.png" alt="Logo" loading="lazy">
     </div>
   </header>
 
-  <!-- NAVIGATION -->
+  <!-- NAV -->
   <nav id="main-nav">
-    <div class="nav-item nav-left">
-      <a href="index.html">HOME</a>
-    </div>
-    <div class="nav-item nav-center">
-      <a href="index-ourDJS.html">THE DJS</a>
-    </div>
+    <div class="nav-item nav-left"><a href="index.html">HOME</a></div>
+    <div class="nav-item nav-center"><a href="index-ourDJS.html">THE DJS</a></div>
     <div class="nav-item nav-right">
       <a href="merch.html">MERCH</a>
-      <a href="https://facebook.com/cutterschoiceradio" target="_blank" class="social-icon">
-        <i class="fab fa-facebook-f"></i>
-      </a>
-      <a href="https://instagram.com/cutterschoiceradio" target="_blank" class="social-icon">
-        <i class="fab fa-instagram"></i>
-      </a>
+      <a href="https://facebook.com/cutterschoiceradio" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://instagram.com/cutterschoiceradio" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
     </div>
   </nav>
 
-  <!-- STORY AS PANELS WITH VIDEO OVERLAY -->
+  <!-- STORY PANELS -->
   <main class="story-content">
-    <!-- Panel 1 -->
     <div class="history-image">
-      <img src="images/1-history.png" alt="Cutters Choice Radio history part 1">
+      <img src="images/1-history.png" alt="History part 1">
     </div>
-
-    <!-- Panel 2 -->
     <div class="history-image">
-      <img src="images/2-history.png" alt="Cutters Choice Radio history part 2">
+      <img src="images/2-history.png" alt="History part 2">
     </div>
-
-    <!-- Panel 3 + YouTube embed -->
     <div class="history-image history-last">
-      <img src="images/3-history.png" alt="Cutters Choice Radio history part 3">
+      <img src="images/3-history.png" alt="History part 3">
       <div class="video-overlay">
         <div class="inner">
-          <iframe
-            src="https://www.youtube.com/embed/6lcWDYT681g"
-            title="Cutters Choice Radio Documentary"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen>
-          </iframe>
+          <iframe src="https://www.youtube.com/embed/6lcWDYT681g" title="Documentary" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
       </div>
     </div>
 
-    <!-- Back link -->
     <a href="index.html" class="back-home">← Back to Main Page</a>
   </main>
 
@@ -151,19 +132,19 @@
   <script>
     (function() {
       const right = document.querySelector('.header-gif-right');
-      const left  = document.querySelector('.header-gif-left');
+      const left = document.querySelector('.header-gif-left');
       let loopCount = 0;
       const set1 = ["url('images/Untitled%20design(4).gif')","url('images/Untitled%20design(5).gif')"];
       const set2 = ["url('images/Untitled%20design(7).gif')","url('images/Untitled%20design(8).gif')"];
       let currentSet = set1;
       right.style.backgroundImage = currentSet[0];
-      left.style.backgroundImage  = currentSet[1];
+      left.style.backgroundImage = currentSet[1];
       right.addEventListener('animationiteration', () => {
         loopCount++;
         if (loopCount % 2 === 0) {
           currentSet = (currentSet === set1) ? set2 : set1;
           right.style.backgroundImage = currentSet[0];
-          left.style.backgroundImage  = currentSet[1];
+          left.style.backgroundImage = currentSet[1];
         }
       });
     })();
