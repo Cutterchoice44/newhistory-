@@ -10,19 +10,24 @@
   <title>Our Story – Cutters Choice Radio</title>
 
   <!-- Main CSS (v bump for cache bust) -->
-  <link rel="stylesheet" href="style.css?v=6">
+  <link rel="stylesheet" href="style.css?v=7">
   <!-- Bebas Neue & FontAwesome -->
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
   <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-  <!-- Page overrides -->
+  <!-- Page-specific overrides -->
   <style>
     :root { --brand-teal: #5A8785; }
 
     /* Ensure header/nav stay above content */
     header.header-banner { position: relative; z-index: 20; }
     nav#main-nav        { position: relative; z-index: 20; }
+
+    /* Nav uses Bebas Neue */
+    nav#main-nav a {
+      font-family: 'Bebas Neue', sans-serif !important;
+    }
 
     /* Story panels wrapper */
     .story-content {
@@ -49,11 +54,11 @@
     /* Embed the video above the bottom banner */
     .history-image.history-last .video-overlay {
       position: absolute;
-      bottom: 20px;           /* sits 20px above panel bottom */
+      bottom: 60px;            /* sits 60px above panel bottom */
       left: 50%;
       transform: translateX(-50%);
-      width: 60%;             /* slightly smaller width */
-      max-width: 600px;
+      width: 50%;              /* match panel width */
+      max-width: 500px;
       z-index: 5;
     }
     .history-image.history-last .video-overlay .inner {
@@ -140,13 +145,13 @@
       const set2 = ["url('images/Untitled%20design(7).gif')","url('images/Untitled%20design(8).gif')"];
       let currentSet = set1;
       right.style.backgroundImage = currentSet[0];
-      left.style.backgroundImage = currentSet[1];
+      left.style.backgroundImage  = currentSet[1];
       right.addEventListener('animationiteration', () => {
         loopCount++;
         if (loopCount % 2 === 0) {
           currentSet = (currentSet === set1) ? set2 : set1;
           right.style.backgroundImage = currentSet[0];
-          left.style.backgroundImage = currentSet[1];
+          left.style.backgroundImage  = currentSet[1];
         }
       });
     })();
