@@ -10,7 +10,7 @@
   <title>Our Story – Cutters Choice Radio</title>
 
   <!-- Main CSS (bump the v to bust caches) -->
-  <link rel="stylesheet" href="style.css?v=3">
+  <link rel="stylesheet" href="style.css?v=4">
   <!-- Bebas Neue & FontAwesome -->
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
   <link rel="stylesheet"
@@ -27,7 +27,6 @@
     /* panel wrapper fills more of the screen */
     .story-content {
       width: 90%;
-      max-width: none;
       margin: 4rem auto;
       background: #000;
       clear: both;
@@ -36,18 +35,20 @@
     .history-image {
       position: relative;
       margin-bottom: 2rem;
+      text-align: center;
     }
     .history-image img {
       display: block;
-      width: 100%;
+      width: 50%;       /* reduced by 50% */
       height: auto;
+      margin: 0 auto;
       border: none;
     }
 
-    /* drop the video further down into panel 3 */
+    /* position the video just under the bottom of panel 3 */
     .history-image.history-last .video-overlay {
       position: absolute;
-      bottom: -200px;
+      bottom: -100px;    /* move up so it sits just below the panel */
       left: 50%;
       transform: translateX(-50%);
       width: 80%;
@@ -62,8 +63,7 @@
     .history-image.history-last .video-overlay iframe {
       position: absolute;
       top: 0; left: 0;
-      width: 100%;
-      height: 100%;
+      width: 100%; height: 100%;
       border: none;
     }
 
@@ -83,14 +83,14 @@
     <div class="header-gif-right"></div>
     <div class="header-gif-left"></div>
     <div class="logo-container">
-      <img class="logo" src="/images/logo.png" alt="Cutters Choice Radio Logo" loading="lazy">
+      <img class="logo" src="images/logo.png" alt="Cutters Choice Radio Logo" loading="lazy">
     </div>
     <div class="title">
       <h1>Cutters Choice Radio</h1>
       <p class="tagline">The home of relentless flavas and significant bangers!</p>
     </div>
     <div class="logo-container">
-      <img class="logo" src="/images/logo.png" alt="Cutters Choice Radio Logo" loading="lazy">
+      <img class="logo" src="images/logo.png" alt="Cutters Choice Radio Logo" loading="lazy">
     </div>
   </header>
 
@@ -153,8 +153,8 @@
       const right = document.querySelector('.header-gif-right');
       const left  = document.querySelector('.header-gif-left');
       let loopCount = 0;
-      const set1 = ["url('/images/Untitled%20design(4).gif')","url('/images/Untitled%20design(5).gif')"];
-      const set2 = ["url('/images/Untitled%20design(7).gif')","url('/images/Untitled%20design(8).gif')"];
+      const set1 = ["url('images/Untitled%20design(4).gif')","url('images/Untitled%20design(5).gif')"];
+      const set2 = ["url('images/Untitled%20design(7).gif')","url('images/Untitled%20design(8).gif')"];
       let currentSet = set1;
       right.style.backgroundImage = currentSet[0];
       left.style.backgroundImage  = currentSet[1];
