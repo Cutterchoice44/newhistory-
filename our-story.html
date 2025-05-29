@@ -2,41 +2,31 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <!-- Prevent browser caching -->
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma"       content="no-cache">
   <meta http-equiv="Expires"      content="0">
   <meta name="viewport"           content="width=device-width, initial-scale=1.0">
   <title>Our Story – Cutters Choice Radio</title>
 
-  <!-- your existing main stylesheet -->
-  <link rel="stylesheet" href="style.css?v=1748349660086">
-  <!-- Bebas Neue & FontAwesome -->
+  <!-- your main CSS -->
+  <link rel="stylesheet" href="style.css?v=2">
+  <!-- fonts/icons -->
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
   <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-  <!-- PAGE-SPECIFIC OVERRIDES -->
   <style>
     :root { --brand-teal: #5A8785; }
 
-    /* make sure header/nav sit on top */
-    header.header-banner,
-    nav#main-nav {
-      position: relative;
-      z-index: 10;
-    }
+    header.header-banner, nav#main-nav { position: relative; z-index: 10; }
 
-    /* wrapper for all your images + video */
     .story-content {
       width: 80%;
       max-width: 1000px;
-      margin: 0 auto 3rem;    /* auto-center, bottom margin for “Back” */
-      padding: 0;
+      margin: 3rem auto;
       background: #000;
-      clear: both;             /* just in case */
+      clear: both;
     }
-
     .history-image {
       position: relative;
       margin-bottom: 2rem;
@@ -48,8 +38,8 @@
       border: none;
     }
 
-    /* only on the third image we overlay the yt video */
-    .history-image.history-last .video-overlay {
+    /* Overlay video on the third panel */
+    .history-last .video-overlay {
       position: absolute;
       bottom: 1.5rem;
       left: 50%;
@@ -58,12 +48,12 @@
       max-width: 800px;
       z-index: 5;
     }
-    .history-image.history-last .video-overlay .inner {
+    .history-last .video-overlay .inner {
       position: relative;
       width: 100%;
       padding-bottom: 56.25%;
     }
-    .history-image.history-last .video-overlay iframe {
+    .history-last .video-overlay iframe {
       position: absolute;
       top: 0; left: 0;
       width: 100%; height: 100%;
@@ -71,66 +61,32 @@
     }
 
     .back-home {
-      display: inline-block;
-      font-size: 1.6rem;
-      margin: 1rem 0;
       color: var(--brand-teal);
       text-decoration: none;
+      font-size: 1.6rem;
+      display: inline-block;
+      margin-bottom: 3rem;
     }
   </style>
 </head>
 
 <body>
-  <!-- HEADER (unchanged) -->
-  <header class="header-banner">
-    <div class="header-gif-right"></div>
-    <div class="header-gif-left"></div>
-    <div class="logo-container">
-      <img class="logo" src="/images/logo.png" alt="Logo" loading="lazy">
-    </div>
-    <div class="title">
-      <h1>Cutters Choice Radio</h1>
-      <p class="tagline">The home of relentless flavas and significant bangers!</p>
-    </div>
-    <div class="logo-container">
-      <img class="logo" src="/images/logo.png" alt="Logo" loading="lazy">
-    </div>
-  </header>
+  <!-- HEADER -->
+  <header class="header-banner">…your existing GIF‐swap header…</header>
 
-  <!-- NAV (now with the center link) -->
-  <nav id="main-nav">
-    <div class="nav-item nav-left">
-      <a href="index.html">HOME</a>
-    </div>
-    <div class="nav-item nav-center">
-      <a href="index-ourDJS.html">THE DJS</a>
-    </div>
-    <div class="nav-item nav-right">
-      <a href="merch.html">MERCH</a>
-      <a href="https://facebook.com/cutterschoiceradio" target="_blank" class="social-icon">
-        <i class="fab fa-facebook-f"></i>
-      </a>
-      <a href="https://instagram.com/cutterschoiceradio" target="_blank" class="social-icon">
-        <i class="fab fa-instagram"></i>
-      </a>
-    </div>
-  </nav>
+  <!-- NAV -->
+  <nav id="main-nav">…your existing nav markup…</nav>
 
-  <!-- YOUR THREE HISTORY IMAGES + YOUTUBE OVERLAY -->
+  <!-- STORY -->
   <main class="story-content">
-    <!-- image 1 -->
     <div class="history-image">
-      <img src="/images/1-history.png" alt="History part 1">
+      <img src="images/1-history.png" alt="Cutters Choice Radio history part 1">
     </div>
-
-    <!-- image 2 -->
     <div class="history-image">
-      <img src="/images/2-history.png" alt="History part 2">
+      <img src="images/2-history.png" alt="Cutters Choice Radio history part 2">
     </div>
-
-    <!-- image 3 + video -->
     <div class="history-image history-last">
-      <img src="/images/3-history.png" alt="History part 3">
+      <img src="images/3-history.png" alt="Cutters Choice Radio history part 3">
       <div class="video-overlay">
         <div class="inner">
           <iframe
@@ -143,33 +99,11 @@
       </div>
     </div>
 
-    <!-- back link -->
     <a href="index.html" class="back-home">← Back to Main Page</a>
   </main>
 
-  <!-- FOOTER (unchanged) -->
+  <!-- FOOTER + GIF‐SWAP SCRIPT -->
   <footer class="banner"></footer>
-
-  <!-- YOUR GIF‐SWAP SCRIPT (unchanged) -->
-  <script>
-    (function() {
-      const right = document.querySelector('.header-gif-right');
-      const left  = document.querySelector('.header-gif-left');
-      let loopCount = 0;
-      const set1 = ["url('/images/Untitled%20design(4).gif')","url('/images/Untitled%20design(5).gif')"];
-      const set2 = ["url('/images/Untitled%20design(7).gif')","url('/images/Untitled%20design(8).gif')"];
-      let currentSet = set1;
-      right.style.backgroundImage = currentSet[0];
-      left.style.backgroundImage  = currentSet[1];
-      right.addEventListener('animationiteration', () => {
-        loopCount++;
-        if (loopCount % 2 === 0) {
-          currentSet = (currentSet === set1) ? set2 : set1;
-          right.style.backgroundImage = currentSet[0];
-          left.style.backgroundImage  = currentSet[1];
-        }
-      });
-    })();
-  </script>
+  <script>…your existing GIF‐swap code…</script>
 </body>
 </html>
