@@ -9,29 +9,36 @@
   <meta name="viewport"           content="width=device-width, initial-scale=1.0">
   <title>Our Story – Cutters Choice Radio</title>
 
-  <!-- Main stylesheet (with your existing header-banner + nav styles) -->
+  <!-- your existing main stylesheet -->
   <link rel="stylesheet" href="style.css?v=1748349660086">
   <!-- Bebas Neue & FontAwesome -->
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
   <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-  <!-- STORY PAGE OVERRIDES -->
+  <!-- PAGE-SPECIFIC OVERRIDES -->
   <style>
     :root { --brand-teal: #5A8785; }
 
-    /* Centered content wrapper */
+    /* make sure header/nav sit on top */
+    header.header-banner,
+    nav#main-nav {
+      position: relative;
+      z-index: 10;
+    }
+
+    /* wrapper for all your images + video */
     .story-content {
       width: 80%;
       max-width: 1000px;
-      margin: 2rem auto;
+      margin: 0 auto 3rem;    /* auto-center, bottom margin for “Back” */
       padding: 0;
       background: #000;
+      clear: both;             /* just in case */
     }
 
-    /* Each history image block */
     .history-image {
-      position: relative; /* for the video overlay on the last one */
+      position: relative;
       margin-bottom: 2rem;
     }
     .history-image img {
@@ -41,57 +48,56 @@
       border: none;
     }
 
-    /* Overlay video on the third image */
+    /* only on the third image we overlay the yt video */
     .history-image.history-last .video-overlay {
       position: absolute;
-      bottom: 1.5rem;           /* lifts it off the very bottom */
+      bottom: 1.5rem;
       left: 50%;
       transform: translateX(-50%);
       width: 70%;
       max-width: 800px;
+      z-index: 5;
     }
     .history-image.history-last .video-overlay .inner {
       position: relative;
       width: 100%;
-      padding-bottom: 56.25%;    /* 16:9 aspect ratio */
+      padding-bottom: 56.25%;
     }
     .history-image.history-last .video-overlay iframe {
       position: absolute;
       top: 0; left: 0;
-      width: 100%;
-      height: 100%;
+      width: 100%; height: 100%;
       border: none;
     }
 
-    /* Back-to-home link */
     .back-home {
       display: inline-block;
       font-size: 1.6rem;
-      margin: 2rem 0;
-      text-decoration: none;
+      margin: 1rem 0;
       color: var(--brand-teal);
+      text-decoration: none;
     }
   </style>
 </head>
 
 <body>
-  <!-- HEADER (your existing animated GIF banner) -->
+  <!-- HEADER (unchanged) -->
   <header class="header-banner">
     <div class="header-gif-right"></div>
     <div class="header-gif-left"></div>
     <div class="logo-container">
-      <img class="logo" src="/images/logo.png" alt="Cutters Choice Radio Logo" loading="lazy">
+      <img class="logo" src="/images/logo.png" alt="Logo" loading="lazy">
     </div>
     <div class="title">
       <h1>Cutters Choice Radio</h1>
       <p class="tagline">The home of relentless flavas and significant bangers!</p>
     </div>
     <div class="logo-container">
-      <img class="logo" src="/images/logo.png" alt="Cutters Choice Radio Logo" loading="lazy">
+      <img class="logo" src="/images/logo.png" alt="Logo" loading="lazy">
     </div>
   </header>
 
-  <!-- NAV (exactly as on your main page) -->
+  <!-- NAV (now with the center link) -->
   <nav id="main-nav">
     <div class="nav-item nav-left">
       <a href="index.html">HOME</a>
@@ -110,26 +116,26 @@
     </div>
   </nav>
 
-  <!-- STORY CONTENT AS IMAGES + VIDEO OVERLAY -->
+  <!-- YOUR THREE HISTORY IMAGES + YOUTUBE OVERLAY -->
   <main class="story-content">
-    <!-- Part 1 -->
+    <!-- image 1 -->
     <div class="history-image">
-      <img src="/images/history-1.png" alt="Cutters Choice Radio history part 1">
+      <img src="/images/1-history.png" alt="History part 1">
     </div>
 
-    <!-- Part 2 -->
+    <!-- image 2 -->
     <div class="history-image">
-      <img src="/images/history-2.png" alt="Cutters Choice Radio history part 2">
+      <img src="/images/2-history.png" alt="History part 2">
     </div>
 
-    <!-- Part 3 + YouTube overlay -->
+    <!-- image 3 + video -->
     <div class="history-image history-last">
-      <img src="/images/history-3.png" alt="Cutters Choice Radio history part 3">
+      <img src="/images/3-history.png" alt="History part 3">
       <div class="video-overlay">
         <div class="inner">
           <iframe
             src="https://www.youtube.com/embed/6lcWDYT681g"
-            title="Cutters Choice Radio Documentary"
+            title="CCR Documentary"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen>
           </iframe>
@@ -137,14 +143,14 @@
       </div>
     </div>
 
-    <!-- Back to main page -->
+    <!-- back link -->
     <a href="index.html" class="back-home">← Back to Main Page</a>
   </main>
 
-  <!-- FOOTER -->
+  <!-- FOOTER (unchanged) -->
   <footer class="banner"></footer>
 
-  <!-- Your existing GIF-swap script -->
+  <!-- YOUR GIF‐SWAP SCRIPT (unchanged) -->
   <script>
     (function() {
       const right = document.querySelector('.header-gif-right');
