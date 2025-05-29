@@ -10,7 +10,7 @@
   <title>Our Story – Cutters Choice Radio</title>
 
   <!-- Main CSS (v bump for cache bust) -->
-  <link rel="stylesheet" href="style.css?v=5">
+  <link rel="stylesheet" href="style.css?v=6">
   <!-- Bebas Neue & FontAwesome -->
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
   <link rel="stylesheet"
@@ -46,18 +46,20 @@
       border: none;
     }
 
-    /* Embed the video just below the third panel */
+    /* Embed the video above the bottom banner */
     .history-image.history-last .video-overlay {
       position: absolute;
-      top: calc(100% + 20px);  /* sit just below the panel */
+      bottom: 20px;           /* sits 20px above panel bottom */
       left: 50%;
       transform: translateX(-50%);
-      width: 50%;               /* match panel width */
+      width: 60%;             /* slightly smaller width */
+      max-width: 600px;
+      z-index: 5;
     }
     .history-image.history-last .video-overlay .inner {
       position: relative;
       width: 100%;
-      padding-bottom: 56.25%;    /* 16:9 aspect */
+      padding-bottom: 56.25%;    /* 16:9 */
     }
     .history-image.history-last .video-overlay iframe {
       position: absolute;
