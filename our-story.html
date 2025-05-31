@@ -87,6 +87,16 @@
     footer.banner {
       margin-top: 3rem;
     }
+
+    /* ─── MOBILE OVERRIDE: enlarge story images & video for mobile only ─────────────────── */
+    @media (max-width: 768px) {
+      .history-image img {
+        width: 75% !important;  /* 50% × 1.5 = 75% */
+      }
+      .history-image.history-last .video-overlay {
+        width: 75% !important;
+      }
+    }
   </style>
 </head>
 
@@ -130,7 +140,11 @@
       <img src="images/3-history.png" alt="History part 3">
       <div class="video-overlay">
         <div class="inner">
-          <iframe src="https://www.youtube.com/embed/6lcWDYT681g" title="Documentary" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/6lcWDYT681g"
+                  title="Documentary"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen>
+          </iframe>
         </div>
       </div>
     </div>
@@ -147,8 +161,14 @@
       const right = document.querySelector('.header-gif-right');
       const left = document.querySelector('.header-gif-left');
       let loopCount = 0;
-      const set1 = ["url('images/Untitled%20design(4).gif')","url('images/Untitled%20design(5).gif')"];
-      const set2 = ["url('images/Untitled%20design(7).gif')","url('images/Untitled%20design(8).gif')"];
+      const set1 = [
+        "url('images/Untitled%20design(4).gif')",
+        "url('images/Untitled%20design(5).gif')"
+      ];
+      const set2 = [
+        "url('images/Untitled%20design(7).gif')",
+        "url('images/Untitled%20design(8).gif')"
+      ];
       let currentSet = set1;
       right.style.backgroundImage = currentSet[0];
       left.style.backgroundImage  = currentSet[1];
